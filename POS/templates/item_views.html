@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block title %}
+    items views
+{% endblock %}
+
+
+{% block content %}
+    <h1>Items</h1>
+    <ul>
+        {% for product in products %}
+            <li>
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                <h2>{{ product.name }}</h2>
+                <p>Price: {{ product.price }}</p>
+                <p>Quantity: {{ product.quantity }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

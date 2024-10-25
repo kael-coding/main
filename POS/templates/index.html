@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>
+        {% block title %}
+            POINT OF SALE SYSTEM 
+        {% endblock %}
+    </title>
+    
+</head>
+<body>
+    <header>
+        <div class="side_nav_bar">
+            <div class="logo">
+                <img src="{% static 'img/POS_12.png' %}">
+                <h2>Point of sale</h2>
+            </div>
+            <ul class="menu_navbar">
+                <li class="active">
+                    <a href="/">
+                        <i class="fa fa-dashboard"></i>
+                        <span>Dashboard</span>
+                        
+                    </a>
+                </li>
+                <li>
+                    <a href="/views/">
+                        <i class="fa fa-product-hunt"></i>
+                        <span>Items</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/add_items">
+                        <i class="fa fa-plus"></i>
+                        <span>Add Items</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-pencil"></i>
+                        <span>Edit Items</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-history"></i>
+                        <span>History</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    {% block content %}
+    {% for product in products %}
+        <p>{{ product }}</p>
+    {% endfor %}
+{% endblock %}
+</body>
+</html>
